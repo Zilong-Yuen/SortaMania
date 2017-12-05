@@ -2,31 +2,32 @@ package SortaMania;
 
 import java.util.Random;
 
-public class TheSorter extends SortCompetition{
-	public void main(String[] args)
+public class TheSorter {
+	public static void main(String[] args)
 	{
 		int[] test1 = generateArr();
-		System.out.print(challengeOne(test1));
+		System.out.print("Challenge One Results: " + challengeOne(test1));
+		System.out.print("\nChallenge Three Results " + challengeThree(test1));
 	}
 	
 	
-	public int challengeOne(int[] arr) {
+	public static int challengeOne(int[] arr) {
 		selectionSort(arr);                                                
 		return Median(arr);
 	}
 
-	public int challengeTwo(String[] arr, String query) {
+	public static int challengeTwo(String[] arr, String query) {
 		bubbleSort(arr);
 		for(int i = 0; i < arr.length; i++)
 		{
-			if(arr[i].equals(query))
+			if(arr[i].equals(query)) 
 			{
 				return i;
 			}
 		}
 		return -1;
 	}
-	public int challengeThree(int[] arr) {
+	public static int challengeThree(int[] arr) {
 		for (int i = 0; i < arr.length*.75; i++)
 		{
 			for (int j = i+1; j < arr.length*.75; j++)
@@ -40,19 +41,16 @@ public class TheSorter extends SortCompetition{
 		return Median(arr);
 	}
 
-	@Override
-	public int challengeFour(int[][] arr) {
+	public static int challengeFour(int[][] arr) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
-	public int challengeFive(Object[] arr, Object query) {
+	public static int challengeFive(Object[] arr, Object query) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-	@Override
 	public String greeting() {
 		return null;
 	}

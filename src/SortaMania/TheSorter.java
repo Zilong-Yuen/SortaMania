@@ -18,7 +18,15 @@ public class TheSorter extends SortCompetition{
 
 	@Override
 	public int challengeTwo(String[] arr, String query) {
-		return 0;
+		bubbleSort(arr);
+		for(int i = 0; i < arr.length; i++)
+		{
+			if(arr[i].equals(query))
+			{
+				return i;
+			}
+		}
+		return -1;
 	}
 	@Override
 	public int challengeThree(int[] arr) {

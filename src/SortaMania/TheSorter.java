@@ -3,7 +3,7 @@ package SortaMania;
 import java.util.Random;
 
 public class TheSorter extends SortCompetition{
-
+	
 	public int challengeOne(int[] arr) {
 		selectionSort(arr);
 		if(arr.length%2==1)

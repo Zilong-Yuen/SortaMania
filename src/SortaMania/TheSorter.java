@@ -52,8 +52,13 @@ public class TheSorter {
 	}
 
 	public String greeting() {
-		return null;
+		return "Omae wa mou shindeiru!";
 	}
+	
+	/*public String concedeMessage()
+	{
+		return "I surrender!";
+	}*/
 
 	public static void selectionSort(int[] list1)
 	{

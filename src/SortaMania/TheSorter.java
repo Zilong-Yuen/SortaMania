@@ -3,13 +3,18 @@ package SortaMania;
 import java.util.Random;
 
 public class TheSorter extends SortCompetition{
+	public void main(String[] args)
+	{
+		int[] test1 = generateArr();
+		System.out.print(challengeOne(test1));
+	}
+	
 	
 	public int challengeOne(int[] arr) {
 		selectionSort(arr);                                                
 		return Median(arr);
 	}
 
-	@Override
 	public int challengeTwo(String[] arr, String query) {
 		bubbleSort(arr);
 		for(int i = 0; i < arr.length; i++)
@@ -19,9 +24,8 @@ public class TheSorter extends SortCompetition{
 				return i;
 			}
 		}
-		return -1;w
+		return -1;
 	}
-	@Override
 	public int challengeThree(int[] arr) {
 		for (int i = 0; i < arr.length*.75; i++)
 		{
@@ -33,6 +37,7 @@ public class TheSorter extends SortCompetition{
 				}
 			}
 		} 
+		return Median(arr);
 	}
 
 	@Override
@@ -106,7 +111,7 @@ public class TheSorter extends SortCompetition{
 		arr[a] = arr[b];
 		arr[b] = temp;
 	}
-	public static int[] GenerateArr()
+	public static int[] generateArr()
 	{
 		int[] name = new int[10000];
 		Random rand = new Random();

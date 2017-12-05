@@ -19,7 +19,7 @@ public class TheSorter extends SortCompetition{
 				return i;
 			}
 		}
-		return -1;
+		return -1;w
 	}
 	@Override
 	public int challengeThree(int[] arr) {

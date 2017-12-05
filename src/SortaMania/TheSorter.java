@@ -18,10 +18,27 @@ public class TheSorter extends SortCompetition{
 
 	@Override
 	public int challengeTwo(String[] arr, String query) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
+		public static void bubbleSort(String[] list1)
+		{
+			for (int i = 0; i < list1.length; i++)
+			{
+				for (int j = i+1; j < list1.length; j++)
+				{
+					if (list1[i].compareTo(list1[j]) < 0)
+					{
+						String temp = list1[i];
+						list1[i] = list1[j];
+						list1[j] = temp;
+					}
+					if (list1[j].compareTo(list1[i]) < 0)
+					{
+						String temp = list1[j];
+						list1[j] = list1[i];
+						list1[i] = temp;
+					}
+				}
+			}
+		}
 	@Override
 	public int challengeThree(int[] arr) {
 		// TODO Auto-generated method stub

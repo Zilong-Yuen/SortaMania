@@ -5,15 +5,8 @@ import java.util.Random;
 public class TheSorter extends SortCompetition{
 	
 	public int challengeOne(int[] arr) {
-		selectionSort(arr);
-		if(arr.length%2==1)
-		{
-			return arr[(arr.length)/2];
-		}
-		else
-		{
-			return (arr[(arr.length/2)] + arr[arr.length/2-1])/2;
-		}
+		selectionSort(arr);                                                
+		return Median(arr);
 	}
 
 	@Override
@@ -22,8 +15,16 @@ public class TheSorter extends SortCompetition{
 	}
 	@Override
 	public int challengeThree(int[] arr) {
-		// TODO Auto-generated method stub
-		return 0;
+		for (int i = 0; i < arr.length*.75; i++)
+		{
+			for (int j = i+1; j < arr.length*.75; j++)
+			{
+				if (arr[i] > arr[j])
+				{
+					swap(arr,i,j);
+				}
+			}
+		} 
 	}
 
 	@Override
@@ -79,6 +80,18 @@ public class TheSorter extends SortCompetition{
 		}
 	}
 
+	public static int Median(int[] list)
+	{
+		if(list.length%2==1)
+		{
+			return list[(list.length)/2];
+		}
+		else
+		{
+			return (list[(list.length/2)] + list[list.length/2-1])/2;
+		}
+	}
+	
 	public static void swap(int[] arr, int a, int b)
 	{
 		int temp = arr[a];

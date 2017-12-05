@@ -5,7 +5,7 @@ import java.util.Random;
 public class TheSorter {
 	public static void main(String[] args)
 	{
-		int[] test1 = generateArr();
+		int[] test1 = generateIntArr();
 		System.out.print("Challenge One Results: " + challengeOne(test1));
 		System.out.print("\nChallenge Three Results " + challengeThree(test1));
 	}
@@ -109,7 +109,7 @@ public class TheSorter {
 		arr[a] = arr[b];
 		arr[b] = temp;
 	}
-	public static int[] generateArr()
+	public static int[] generateIntArr()
 	{
 		int[] name = new int[10000];
 		Random rand = new Random();

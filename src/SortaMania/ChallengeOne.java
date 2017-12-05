@@ -11,6 +11,9 @@ public class ChallengeOne {
 			System.out.print("[" + test1[i] + "]");
 		}
 		System.out.print("\nMedian: " + Median(test1));
+		int[] test2 = GenerateArr();
+		selectionSort(test2);
+		System.out.print("\nMedian: " + Median(test2));
 	}
 	public static void selectionSort(int[] list1)
 	{
@@ -25,7 +28,7 @@ public class ChallengeOne {
 			}
 		} 
 	}
-	public static double Median(int[] list)
+	public static int Median(int[] list)
 	{
 		if(list.length%2==1)
 		{
@@ -33,8 +36,7 @@ public class ChallengeOne {
 		}
 		else
 		{
-			//return (list[(list.length/2)] + list[list.length/2-1])/2;
-			return list[]
+			return (list[(list.length/2)] + list[list.length/2-1])/2;
 		}
 	}
 	public static void swap(int[] arr, int a, int b)
@@ -47,9 +49,11 @@ public class ChallengeOne {
 	{
 		int[] name = new int[10000];
 		Random rand = new Random();
+		int x = rand.nextInt(10000) + 1;
 		for(int i = 0; i<name.length;i++)
 		{
-			
+			name[i] = x;
 		}
+		return name;
 	}
 }

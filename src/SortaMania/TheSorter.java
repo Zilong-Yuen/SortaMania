@@ -6,9 +6,11 @@ public class TheSorter {
 	public static void main(String[] args)
 	{
 		int[] test1 = generateIntArr();
+		String[] test2 = generateStringArr();
 		System.out.print("Challenge One Results: " + challengeOne(test1));
-	
+		System.out.print("\nChallenge Two Results: " + challengeTwo(test2, "aaaaa"));
 		System.out.print("\nChallenge Three Results " + challengeThree(test1));
+		
 	}
 	
 	
@@ -135,7 +137,8 @@ public class TheSorter {
 		Random rand = new Random();
 		int x = rand.nextInt(26) + 1;
 		String construct = " ";
-		for (int i = 0; i < strings.length; i++)
+		strings[1] = "aaaaa";
+		for (int i = 1; i < strings.length; i++)
 		{
 			for (int j = 0; j < 5; j++)
 			{
@@ -144,5 +147,6 @@ public class TheSorter {
 			strings[i] = construct;
 			construct = " ";
 		}
+		return strings;
 	}
 }

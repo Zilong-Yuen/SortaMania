@@ -7,6 +7,7 @@ public class TheSorter {
 	{
 		int[] test1 = generateIntArr();
 		System.out.print("Challenge One Results: " + challengeOne(test1));
+	
 		System.out.print("\nChallenge Three Results " + challengeThree(test1));
 	}
 	
@@ -131,5 +132,17 @@ public class TheSorter {
 		String[] randomLetts = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
 				"u", "v", "w", "x", "y","z"};
 		String[] strings = new String[10000];
+		Random rand = new Random();
+		int x = rand.nextInt(26) + 1;
+		String construct = " ";
+		for (int i = 0; i < strings.length; i++)
+		{
+			for (int j = 0; j < 5; j++)
+			{
+				construct += randomLetts[x];
+			}
+			strings[i] = construct;
+			construct = " ";
+		}
 	}
 }

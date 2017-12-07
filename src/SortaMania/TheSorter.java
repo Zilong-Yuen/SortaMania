@@ -1,5 +1,6 @@
 package SortaMania;
 
+
 import java.util.Random;
 
 public class TheSorter {
@@ -7,9 +8,11 @@ public class TheSorter {
 	{
 		int[] test1 = generateIntArr();
 		String[] test2 = generateStringArr();
+		int[][] test3 = generateMDIntArr();
 		System.out.print("Challenge One Results: " + challengeOne(test1));
-		System.out.print("\nChallenge Two Results: " + challengeTwo(test2, "aaaaa"));
+		System.out.print("\nChallenge Two Results: " + challengeTwo(test2, "reeee"));
 		System.out.print("\nChallenge Three Results " + challengeThree(test1));
+		System.out.print("\nChallenge Four Results: " + challengeFour(test3));
 		
 	}
 	
@@ -45,8 +48,13 @@ public class TheSorter {
 	}
 
 	public static int challengeFour(int[][] arr) {
-		// TODO Auto-generated method stub
-		return 0;
+		int[] medianArr = new int[arr.length];
+		for (int i = 0; i < arr.length; i++)
+		{
+			selectionSort(arr[i]);
+			medianArr[i] = Median(arr[i]);
+		}
+		return Median(medianArr);
 	}
 
 	public static int challengeFive(Object[] arr, Object query) {
@@ -129,21 +137,36 @@ public class TheSorter {
 		return name;
 	}
 	
+	public static int[][] generateMDIntArr()
+	{
+		int[][] name = new int[1000][1000];
+		Random rand = new Random();
+		int x = rand.nextInt(10000) + 1;
+		for(int i = 0; i<name.length;i++)
+		{
+			for(int j = 0; j<name[i].length; j++)
+			{
+				name[i][j] = x;
+			}
+		}
+		return name;
+	}
+	
 	public static String[] generateStringArr()
 	{
 		String[] randomLetts = {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t",
 				"u", "v", "w", "x", "y","z"};
 		String[] strings = new String[10000];
 		Random rand = new Random();
-		int x = rand.nextInt(26) + 1;
 		String construct = " ";
-		strings[1] = "aaaaa";
-		for (int i = 1; i < strings.length; i++)
+		int item1 = rand.nextInt(26) + 1;
+		int item2 = rand.nextInt(26) + 1;
+		int item3 = rand.nextInt(26) + 1;
+		int item4 = rand.nextInt(26) + 1;
+		int item5 = rand.nextInt(26) + 1;
+		for (int i = 0; i < strings.length; i++)
 		{
-			for (int j = 0; j < 5; j++)
-			{
-				construct += randomLetts[x];
-			}
+			construct = randomLetts[item1] + randomLetts[item2] + randomLetts[item3] + randomLetts[item4] + randomLetts[item5];
 			strings[i] = construct;
 			construct = " ";
 		}
